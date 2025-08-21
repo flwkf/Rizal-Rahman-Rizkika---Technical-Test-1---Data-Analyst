@@ -1,11 +1,11 @@
-# 📊  Sser Behavior Analysis – Technical Test
+# 📊  User Behavior Analysis – Technical Test
 
 This project contains a collection of **SQL queries** for analyzing user, card, and transaction data using **Google BigQuery**.
 
 ---
 
 ## 🗂 **Repository Structure**
-'''
+```
 ├── README.md
 ├── data_dictionary.md
 ├── data/
@@ -21,7 +21,7 @@ This project contains a collection of **SQL queries** for analyzing user, card, 
 ├── 06_fraud_detection.sql
 └── 07_error_reliability.sql
 ├── 08_geographic_spending.sql
-'''
+```
 
 ---
 

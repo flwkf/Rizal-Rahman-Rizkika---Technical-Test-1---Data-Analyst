@@ -8,6 +8,7 @@ This project contains a collection of **SQL queries** for analyzing user, card, 
 ```
 ├── README.md
 ├── data_dictionary.md
+├── Presentation.pdf
 ├── data/
 │ ├── users_data.csv
 │ ├── cards_data.csv

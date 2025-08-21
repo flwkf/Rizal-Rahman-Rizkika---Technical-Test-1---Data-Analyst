@@ -5,6 +5,7 @@ This project contains a collection of **SQL queries** for analyzing user, card, 
 ---
 
 ## 🗂 **Repository Structure**
+'''
 ├── README.md
 ├── data_dictionary.md
 ├── data/
@@ -20,7 +21,7 @@ This project contains a collection of **SQL queries** for analyzing user, card, 
 ├── 06_fraud_detection.sql
 └── 07_error_reliability.sql
 ├── 08_geographic_spending.sql
-
+'''
 
 ---
 
@@ -81,3 +82,5 @@ Detailed column descriptions are available in [data_dictionary.md](./data_dictio
 SELECT gender, COUNT(*) AS total_users
 FROM `alert-snowfall-469510-b3.technical_test.users_data`
 GROUP BY gender;
+
+

@@ -11,9 +11,30 @@ SELECT
     AVG(current_age) AS avg_age
 FROM alert-snowfall-469510-b3.technical_test.users_data;
 
+-- Distribusi umur per kelompok (age group) dan gender
+WITH base AS (
+  SELECT
+    gender,
+    current_age
+  FROM alert-snowfall-469510-b3.technical_test.users_data
+  WHERE current_age IS NOT NULL
+)
+SELECT
+  gender,
+  CASE 
+    WHEN current_age BETWEEN 18 AND 25 THEN '18-25'
+    WHEN current_age BETWEEN 26 AND 35 THEN '26-35'
+    WHEN current_age BETWEEN 36 AND 50 THEN '36-50'
+    WHEN current_age BETWEEN 51 AND 65 THEN '51-65'
+    ELSE '65+' 
+  END AS age_group,
+  COUNT(*) AS total_users
+FROM base
+GROUP BY gender, age_group
+ORDER BY age_group, gender;
+
 -- Rata-rata usia nasabah baru per tahun
 WITH base AS (
-  -- Subquery untuk dapatkan first_year, age_at_first_txn, dan total_users
   SELECT
     EXTRACT(YEAR FROM MIN(DATE(t.date))) AS first_year,
     (EXTRACT(YEAR FROM MIN(DATE(t.date))) - u.birth_year) AS age_at_first_txn,
